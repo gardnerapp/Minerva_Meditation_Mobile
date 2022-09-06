@@ -17,14 +17,14 @@ class Player extends StatefulWidget {
 
 class _PlayerState extends State<Player> {
   final AudioPlayer _audioPlayer = AudioPlayer();
-  PlayerState _playerState = PlayerState.STOPPED;
+  PlayerState _playerState = PlayerState.stopped;
 
-  bool get _isPlaying => _playerState == PlayerState.PLAYING;
+  bool get _isPlaying => _playerState == PlayerState.playing;
 
   @override
   void initState() {
-    _audioPlayer.play(this.widget.track);
-    _playerState = PlayerState.PLAYING;
+    _audioPlayer.play(UrlSource(widget.track));
+    _playerState = PlayerState.playing;
     super.initState();
   }
 
@@ -45,7 +45,7 @@ class _PlayerState extends State<Player> {
         ),
         title: Text(
           widget.title,
-          style: TextStyle(fontSize: 25.0),
+          style: const TextStyle(fontSize: 25.0),
         ),
       ),
       body: Stack(children: [
@@ -85,20 +85,16 @@ class _PlayerState extends State<Player> {
   }
 
   _playPause() async {
-    if (_playerState == PlayerState.PLAYING) {
+    if (_playerState == PlayerState.playing) {
       final playerResult = await _audioPlayer.pause();
-      if (playerResult == 1) {
         setState(() {
-          _playerState = PlayerState.PAUSED;
+          _playerState = PlayerState.paused;
         });
-      }
-    } else if (_playerState == PlayerState.PAUSED) {
+    } else if (_playerState == PlayerState.paused) {
       final playerResult = await _audioPlayer.resume();
-      if (playerResult == 1) {
         setState(() {
-          _playerState = PlayerState.PLAYING;
+          _playerState = PlayerState.playing;
         });
-      }
     }
   }
 

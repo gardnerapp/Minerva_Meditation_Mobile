@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class BookAPI{
-  final String path = BaseAPI.root + "/books";
+  final String path = "${BaseAPI.root}/books";
 
   Future<List<dynamic>> index() async {
     final response = await http.get(Uri.parse(path), headers: BaseAPI.headers);

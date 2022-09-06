@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:minerva_meditation/models/meditation_model.dart';
 
 class MeditationAPI {
-  final String path = BaseAPI.root + "/meditations";
+  final String path = "${BaseAPI.root}/meditations";
 
   Future<List<dynamic>> index() async {
     final response = await http.get(Uri.parse(path), headers: BaseAPI.headers);
