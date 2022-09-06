@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class InfoGraphic extends StatelessWidget {
   final String msg;
-  const InfoGraphic({required Key key, required this.msg}) : super(key: key);
+  const InfoGraphic({Key? key, required this.msg}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class InfoGraphic extends StatelessWidget {
         child: Text(
       msg,
       textAlign: TextAlign.center,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 75.0,
         color: Colors.white,
       ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:minerva_meditation/api/meditation_api.dart';
 import 'package:minerva_meditation/shared/infographic.dart';
+import 'package:minerva_meditation/shared/progress.dart';
 import 'meditation_card.dart';
 
 class IndexMeditation extends StatelessWidget {
-  const IndexMeditation({Key key}) : super(key: key);
+  const IndexMeditation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +21,13 @@ class IndexMeditation extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (BuildContext context, int indx) {
-                  return SizedBox(height: 40);
+                  return const SizedBox(height: 40);
                 },
                 itemCount: snapShot.data.length);
           } else if (snapShot.hasError) {
-            return Container(
-              child:  InfoGraphic(msg: "Error :(\n\n Please Try Later"));
+            return const InfoGraphic(msg: "Error :(\n\n Please Try Later");
           }
-          return Container(
-            height: 100.0,
-            child: Center(
-                child: CircularProgressIndicator(
-              backgroundColor: Colors.white,
-                  strokeWidth: 10.0,
-            )));
+          return const Progress();
       },
     );
   }

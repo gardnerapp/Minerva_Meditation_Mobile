@@ -6,35 +6,34 @@ import 'package:minerva_meditation/views/player.dart';
 class ChapterCard extends StatelessWidget {
   final Book book;
   final Chapter chapter;
-  const ChapterCard({Key key, this.chapter, this.book}) : super(key: key);
+  const ChapterCard({Key? key, required this.chapter, required this.book}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-      padding: EdgeInsets.all(1),
+      margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      padding: const EdgeInsets.all(1),
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
         child: ListTile(
-          leading: Icon(
+          leading: const Icon(
             Icons.book,
             size: 40.0,
             color: Colors.orange,
           ),
           title: Text(
-            this.chapter.title,
-            style: TextStyle(fontSize: 22.0),
+            chapter.title,
+            style: const TextStyle(fontSize: 22.0),
           ),
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => Player(
-                          title: this.chapter.title,
-                          track: this.chapter.track,
-                          backGroundAsset: this.book.getBackgroundPhoto(),
-                          key: key,
+                          title: chapter.title,
+                          track: chapter.track,
+                          backGroundAsset: book.getBackgroundPhoto(),
                         )));
           },
         ),

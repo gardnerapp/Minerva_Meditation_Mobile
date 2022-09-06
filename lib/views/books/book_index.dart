@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:minerva_meditation/api/book_api.dart';
 import 'package:minerva_meditation/shared/infographic.dart';
 
+import '../../shared/progress.dart';
 import 'book_card.dart';
 
 class BookIndex extends StatelessWidget {
-  const BookIndex({required Key key}) : super(key: key);
+  const BookIndex({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +28,10 @@ class BookIndex extends StatelessWidget {
                 },
                 itemCount: snapShot.data.length);
           } else if (snapShot.hasError) {
-            print(snapShot.error.toString());
-            print(snapShot.error);
             return Container(
-                child: InfoGraphic(msg: "Error :(\n\n Please Try Later", key: null,));
+                child: const InfoGraphic(msg: "Error :(\n\n Please Try Later"));
           }
-          return Container(
-              height: 100.0,
-              child: Center(
-                  child: CircularProgressIndicator(
-                backgroundColor: Colors.white,
-                strokeWidth: 10.0,
-              )));
+          return const Progress();
         });
   }
 }

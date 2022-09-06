@@ -7,20 +7,20 @@ import 'chapter_card.dart';
 class ShowBook extends StatelessWidget {
   final Book book;
 
-  const ShowBook({required Key key, required this.book}) : super(key: key);
+  const ShowBook({Key? key, required this.book}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.book.title),
+        title: Text(book.title),
       ),
       body: Stack(
         children: [
-          StackBgImg(img: this.book.getBackgroundPhoto(), key: null,),
+          StackBgImg(img: book.getBackgroundPhoto()),
           ListView(
-              children: this.book.chapters.map((chapter) =>
-                  ChapterCard(key: key, book: this.book, chapter: chapter)).toList()
+              children: book.chapters.map((chapter) =>
+                  ChapterCard(key: key, book: book, chapter: chapter)).toList()
           ),
         ],
       )

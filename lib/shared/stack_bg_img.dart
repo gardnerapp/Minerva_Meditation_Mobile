@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class StackBgImg extends StatelessWidget {
   final String img;
 
-  const StackBgImg({required Key key, required this.img}) : super(key: key);
+  const StackBgImg({Key? key, required this.img}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class StackBgImg extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage(this.img),
+            image: AssetImage(img),
             fit: BoxFit.cover,
           )),
         ))

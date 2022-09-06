@@ -8,7 +8,7 @@ class Player extends StatefulWidget {
   final String backGroundAsset;
 
   const Player(
-      {Key key, this.title, this.track, this.backGroundAsset})
+      {Key? key, required this.title, required this.track, required this.backGroundAsset})
       : super(key: key);
 
   @override
@@ -40,23 +40,23 @@ class _PlayerState extends State<Player> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () => Navigator.pop(context)
         ),
         title: Text(
-          this.widget.title,
+          widget.title,
           style: TextStyle(fontSize: 25.0),
         ),
       ),
       body: Stack(children: [
-        StackBgImg(img: this.widget.backGroundAsset),
+        StackBgImg(img: widget.backGroundAsset),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Center(
                 child: Container(
-             margin: EdgeInsets.only(top: 25),
+             margin: const EdgeInsets.only(top: 25),
               decoration:
                   BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0)),
@@ -72,9 +72,9 @@ class _PlayerState extends State<Player> {
                       color: Colors.black87,
                       iconSize: 150,
                       icon: _isPlaying
-                          ? Icon(Icons
+                          ? const Icon(Icons
                               .pause) // Pause Icon if playing, Play if not playing
-                          : Icon(Icons.play_arrow),
+                          : const Icon(Icons.play_arrow),
                       onPressed: () => _playPause())),
             )),
             SizedBox(height: MediaQuery.of(context).size.height * .1,)

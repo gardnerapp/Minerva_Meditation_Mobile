@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
           splashColor: Colors.orange,
-          appBarTheme: AppBarTheme(elevation: 16.0),
-          cardTheme: CardTheme(elevation: 20.0, shadowColor: Colors.deepOrange),
-          sliderTheme: SliderThemeData(
+          appBarTheme: const AppBarTheme(elevation: 16.0),
+          cardTheme: const CardTheme(elevation: 20.0, shadowColor: Colors.deepOrange),
+          sliderTheme: const SliderThemeData(
             activeTrackColor: Colors.deepOrange,
             inactiveTrackColor: Colors.grey,
             trackHeight: 3.0,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,3 +62,6 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+
+

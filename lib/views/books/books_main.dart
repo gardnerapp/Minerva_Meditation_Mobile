@@ -5,7 +5,7 @@ import 'package:minerva_meditation/views/books/book_index.dart';
 import 'book_card.dart';
 
 class BooksMain extends StatelessWidget {
-  const BooksMain({Key key}) : super(key: key);
+  const BooksMain({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

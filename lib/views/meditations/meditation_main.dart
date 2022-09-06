@@ -4,7 +4,7 @@ import 'index_meditation.dart';
 
 
 class MeditationMain extends StatelessWidget {
-  const MeditationMain({Key key}) : super(key: key);
+  const MeditationMain({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
