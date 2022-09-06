@@ -13,7 +13,7 @@ class MeditationAPI {
       var body = jsonDecode(response.body);
       return body.map((e) => Meditation.fromJson(e)).toList();
     } else {
-      return null;
+      return [];
     }
   }
 }

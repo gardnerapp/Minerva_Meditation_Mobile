@@ -61,6 +61,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - lib/assets/img/library.jpg
+    - lib/assets/img/monastary.jpg
+    - lib/assets/img/art_of_war.jpg
+    - lib/assets/img/default_book.jpg
+    - lib/assets/img/school_of_athens.jpg
+    - lib/assets/img/zen_one.jpg
+    - lib/assets/img/sun_tzu.jpg
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

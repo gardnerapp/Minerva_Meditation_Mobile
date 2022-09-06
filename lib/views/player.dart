@@ -16,7 +16,7 @@ class Player extends StatefulWidget {
 }
 
 class _PlayerState extends State<Player> {
-  AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
+  final AudioPlayer _audioPlayer = AudioPlayer();
   PlayerState _playerState = PlayerState.STOPPED;
 
   bool get _isPlaying => _playerState == PlayerState.PLAYING;

@@ -14,7 +14,7 @@ class BookAPI{
       var body = jsonDecode(response.body);
       return body.map((e) => Book.fromJson(e)).toList();
     }else{
-      return null;
+      return [];
     }
   }
 

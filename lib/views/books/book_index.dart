@@ -15,21 +15,20 @@ class BookIndex extends StatelessWidget {
     return FutureBuilder(
         future: bookAPI.index(),
         builder: (context, snapShot) {
-          if (snapShot.hasData) {
+          if (snapShot.hasData && snapShot.data! != []) {
             return ListView.separated(
-              padding: EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(25.0),
                 itemBuilder: (BuildContext context, int index) {
                   return BookCard(
-                    book: snapShot.data[index], key: null,
+                    book: snapShot.data![index]
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 40);
+                  return const SizedBox(height: 40);
                 },
-                itemCount: snapShot.data.length);
+                itemCount: snapShot.data!.length);
           } else if (snapShot.hasError) {
-            return Container(
-                child: const InfoGraphic(msg: "Error :(\n\n Please Try Later"));
+            return const InfoGraphic(msg: "Error :(\n\n Please Try Later");
           }
           return const Progress();
         });
