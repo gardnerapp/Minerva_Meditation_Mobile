@@ -3,10 +3,12 @@ import 'package:minerva_meditation/views/books/books_main.dart';
 import 'package:minerva_meditation/views/meditations/meditation_main.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,5 +1,8 @@
 import 'package:minerva_meditation/models/book_model.dart';
 
+// switch s3 buckets and/or create CDN to improve load times
+// push to git and redploy
+
 import 'base_api.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
